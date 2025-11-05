@@ -28,7 +28,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'hotel',
     freezeTableName: true,
-    timestamps: true,
+    // Disable automatic timestamp columns (createdAt, updatedAt)
+    // because the existing DB table doesn't have them.
+    timestamps: false,
   });
 
   return Hotel;
